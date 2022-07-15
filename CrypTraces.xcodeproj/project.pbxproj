@@ -7,19 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB9663CD2881C72D00015626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663CC2881C72D00015626 /* AppDelegate.swift */; };
+		AB9663CF2881CF1B00015626 /* MenuBarCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */; };
+		AB9663D12881D3CF00015626 /* PopoverCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663D02881D3CF00015626 /* PopoverCoinView.swift */; };
+		AB9663D42881E06C00015626 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663D32881E06C00015626 /* CoinType.swift */; };
+		AB9663D62881E15C00015626 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663D52881E15C00015626 /* Coin.swift */; };
 		AB9D44892881A14C0072C201 /* CrypTracesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D44882881A14C0072C201 /* CrypTracesApp.swift */; };
-		AB9D448B2881A14C0072C201 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D448A2881A14C0072C201 /* ContentView.swift */; };
 		AB9D448D2881A14E0072C201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9D448C2881A14E0072C201 /* Assets.xcassets */; };
 		AB9D44902881A14E0072C201 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9D448F2881A14E0072C201 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB9663CC2881C72D00015626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCoinView.swift; sourceTree = "<group>"; };
+		AB9663D02881D3CF00015626 /* PopoverCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverCoinView.swift; sourceTree = "<group>"; };
+		AB9663D32881E06C00015626 /* CoinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinType.swift; sourceTree = "<group>"; };
+		AB9663D52881E15C00015626 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		AB9D44852881A14C0072C201 /* CrypTraces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrypTraces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9D44882881A14C0072C201 /* CrypTracesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypTracesApp.swift; sourceTree = "<group>"; };
-		AB9D448A2881A14C0072C201 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB9D448C2881A14E0072C201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB9D448F2881A14E0072C201 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB9D44912881A14E0072C201 /* CrypTraces.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrypTraces.entitlements; sourceTree = "<group>"; };
+		ABA8017B2881C5D000506BD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +61,14 @@
 		AB9D44872881A14C0072C201 /* CrypTraces */ = {
 			isa = PBXGroup;
 			children = (
+				ABA8017B2881C5D000506BD7 /* Info.plist */,
+				AB9663CC2881C72D00015626 /* AppDelegate.swift */,
 				AB9D44882881A14C0072C201 /* CrypTracesApp.swift */,
-				AB9D448A2881A14C0072C201 /* ContentView.swift */,
+				AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */,
+				AB9663D02881D3CF00015626 /* PopoverCoinView.swift */,
+				ABA8017A2881C46600506BD7 /* Model */,
+				ABA801792881C46100506BD7 /* View */,
+				ABA801782881C45A00506BD7 /* ModelView */,
 				AB9D448C2881A14E0072C201 /* Assets.xcassets */,
 				AB9D44912881A14E0072C201 /* CrypTraces.entitlements */,
 				AB9D448E2881A14E0072C201 /* Preview Content */,
@@ -67,6 +82,29 @@
 				AB9D448F2881A14E0072C201 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABA801782881C45A00506BD7 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		ABA801792881C46100506BD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABA8017A2881C46600506BD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB9663D52881E15C00015626 /* Coin.swift */,
+				AB9663D32881E06C00015626 /* CoinType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB9D448B2881A14C0072C201 /* ContentView.swift in Sources */,
+				AB9663D62881E15C00015626 /* Coin.swift in Sources */,
+				AB9663D42881E06C00015626 /* CoinType.swift in Sources */,
+				AB9663CF2881CF1B00015626 /* MenuBarCoinView.swift in Sources */,
+				AB9663CD2881C72D00015626 /* AppDelegate.swift in Sources */,
 				AB9D44892881A14C0072C201 /* CrypTracesApp.swift in Sources */,
+				AB9663D12881D3CF00015626 /* PopoverCoinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +316,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CrypTraces/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +344,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CrypTraces/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
