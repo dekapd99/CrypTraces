@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CrypTracesApp: App {
+    
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmptyView().frame(width: 0, height: 0) // Base Empty View in Mac
         }
     }
 }
