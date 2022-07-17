@@ -10,6 +10,8 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    // CoinCapService dari Model
+    var coinCapService = CoinCapPriceService()
     // NS Status Item sebagai Property App Delegate
     var statusItem: NSStatusItem! // Individual Displayed System Menu Bar
     // Deklarasi Instance NSPopover -> Display Additional Content Related to the Existing Content
@@ -26,8 +28,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        setupCoinCapService() // Aktifkan CoinCap Service di Main Thread
         setupMenuBar() // Tampilkan Menu Bar di Status Bar Mac
         setupPopover() // Tampilkan Pop Up setelah di klik
+    }
+    
+    func setupCoinCapService() {
+        coinCapService.connect()
     }
     
 }
