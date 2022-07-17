@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB50E76B2882B29400088435 /* CoinCapPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50E76A2882B29400088435 /* CoinCapPriceService.swift */; };
 		AB9663CD2881C72D00015626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663CC2881C72D00015626 /* AppDelegate.swift */; };
 		AB9663CF2881CF1B00015626 /* MenuBarCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */; };
 		AB9663D12881D3CF00015626 /* PopoverCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663D02881D3CF00015626 /* PopoverCoinView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB50E76A2882B29400088435 /* CoinCapPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapPriceService.swift; sourceTree = "<group>"; };
 		AB9663CC2881C72D00015626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCoinView.swift; sourceTree = "<group>"; };
 		AB9663D02881D3CF00015626 /* PopoverCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverCoinView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA8017B2881C5D000506BD7 /* Info.plist */,
+				AB50E76A2882B29400088435 /* CoinCapPriceService.swift */,
 				AB9663CC2881C72D00015626 /* AppDelegate.swift */,
 				AB9D44882881A14C0072C201 /* CrypTracesApp.swift */,
 				AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */,
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB9663D62881E15C00015626 /* Coin.swift in Sources */,
+				AB50E76B2882B29400088435 /* CoinCapPriceService.swift in Sources */,
 				AB9663D42881E06C00015626 /* CoinType.swift in Sources */,
 				AB9663CF2881CF1B00015626 /* MenuBarCoinView.swift in Sources */,
 				AB9663CD2881C72D00015626 /* AppDelegate.swift in Sources */,
