@@ -9,7 +9,10 @@ import Cocoa
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+    // implicitly inject MenuBarCoinViewModel
+    var menuBarCoinViewModel: MenuBarCoinViewModel!
+    // implicitly inject MenuBarCoinViewModel
+    var popoverCoinViewModel: PopoverCoinViewModel!
     // CoinCapService dari Model
     var coinCapService = CoinCapPriceService()
     // NS Status Item sebagai Property App Delegate
@@ -34,7 +37,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func setupCoinCapService() {
-        coinCapService.connect()
+        coinCapService.connect() // konekin dengan coincap.io service
+        coinCapService.startMonitorNetworkConnectivity() // start monitoring connectivity
     }
     
 }
@@ -46,6 +50,7 @@ extension AppDelegate {
     
     // Fungsi Konfigurasi Menu Bar
     func setupMenuBar() {
+        menuBarCoinViewModel = MenuBarCoinViewModel(service: coinCapService)
         // Assign Status Item Property, Load Status Item Spesific Space (Length = 64) di Status Bar
         statusItem = NSStatusBar.system.statusItem(withLength: 64)
         
@@ -55,7 +60,7 @@ extension AppDelegate {
         else { return }
 
         // AppKit view -> Subclass NSView dari AppKit
-        let hostingView = NSHostingView(rootView: MenuBarCoinView())
+        let hostingView = NSHostingView(rootView: MenuBarCoinView(viewModel: menuBarCoinViewModel)) // initialize with menuBarCoinViewModel
         hostingView.translatesAutoresizingMaskIntoConstraints = false // Menu Button Auto Layout
         contentView.addSubview(hostingView) // Invoke passing hostingView
         
@@ -104,13 +109,14 @@ extension AppDelegate: NSPopoverDelegate {
     
     // Fungsi Konfigurasi Pop Up
     func setupPopover() {
+        popoverCoinViewModel = .init(service: coinCapService)
         popover.behavior = .transient // Close Pop up kalo user klik di luar kotak Pop up
         popover.animates = true
         popover.contentSize = .init(width: 240, height: 280) // ukuran pop up
         popover.contentViewController = NSViewController() // assign contentView controller via init NSViewController
         // Set Content View dengan NSHostingView -> set frame .infinity agar bisa mengambil seluruh space yang disediakan controlview
         popover.contentViewController?.view = NSHostingView(
-            rootView: PopoverCoinView().frame(maxWidth: .infinity, maxHeight: .infinity).padding()
+            rootView: PopoverCoinView(viewModel: popoverCoinViewModel).frame(maxWidth: .infinity, maxHeight: .infinity).padding()
         )
         popover.delegate = self // Supaya view window click gak stack ketika setiap di click
     }
