@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB09024128852C4400FB554A /* MenuBarCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09024028852C4400FB554A /* MenuBarCoinViewModel.swift */; };
+		AB0902442885383600FB554A /* PopoverCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0902432885383600FB554A /* PopoverCoinViewModel.swift */; };
 		AB50E76B2882B29400088435 /* CoinCapPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50E76A2882B29400088435 /* CoinCapPriceService.swift */; };
 		AB9663CD2881C72D00015626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663CC2881C72D00015626 /* AppDelegate.swift */; };
 		AB9663CF2881CF1B00015626 /* MenuBarCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB09024028852C4400FB554A /* MenuBarCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCoinViewModel.swift; sourceTree = "<group>"; };
+		AB0902432885383600FB554A /* PopoverCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverCoinViewModel.swift; sourceTree = "<group>"; };
 		AB50E76A2882B29400088435 /* CoinCapPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapPriceService.swift; sourceTree = "<group>"; };
 		AB9663CC2881C72D00015626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCoinView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB090242288535CD00FB554A /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				AB50E76A2882B29400088435 /* CoinCapPriceService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
 		AB9D447C2881A14C0072C201 = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				ABA8017B2881C5D000506BD7 /* Info.plist */,
-				AB50E76A2882B29400088435 /* CoinCapPriceService.swift */,
 				AB9663CC2881C72D00015626 /* AppDelegate.swift */,
 				AB9D44882881A14C0072C201 /* CrypTracesApp.swift */,
-				AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */,
-				AB9663D02881D3CF00015626 /* PopoverCoinView.swift */,
+				AB090242288535CD00FB554A /* APIService */,
 				ABA8017A2881C46600506BD7 /* Model */,
 				ABA801792881C46100506BD7 /* View */,
 				ABA801782881C45A00506BD7 /* ModelView */,
@@ -90,6 +100,8 @@
 		ABA801782881C45A00506BD7 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				AB09024028852C4400FB554A /* MenuBarCoinViewModel.swift */,
+				AB0902432885383600FB554A /* PopoverCoinViewModel.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -97,6 +109,8 @@
 		ABA801792881C46100506BD7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB9663CE2881CF1B00015626 /* MenuBarCoinView.swift */,
+				AB9663D02881D3CF00015626 /* PopoverCoinView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,7 +197,9 @@
 				AB9663D62881E15C00015626 /* Coin.swift in Sources */,
 				AB50E76B2882B29400088435 /* CoinCapPriceService.swift in Sources */,
 				AB9663D42881E06C00015626 /* CoinType.swift in Sources */,
+				AB0902442885383600FB554A /* PopoverCoinViewModel.swift in Sources */,
 				AB9663CF2881CF1B00015626 /* MenuBarCoinView.swift in Sources */,
+				AB09024128852C4400FB554A /* MenuBarCoinViewModel.swift in Sources */,
 				AB9663CD2881C72D00015626 /* AppDelegate.swift in Sources */,
 				AB9D44892881A14C0072C201 /* CrypTracesApp.swift in Sources */,
 				AB9663D12881D3CF00015626 /* PopoverCoinView.swift in Sources */,
