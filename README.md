@@ -29,9 +29,9 @@ Berikut struktur file dan folder pada iReader:
 ## Features:
 
 * Filter Tipe Text Scanner (All, URL, Phone, Email, Address)
-* QR & Barcode Scanner
-* Text Scanner
-* Native iOS Camera
+* Ping Scheduler
+* CoinCap API
+* Menu Bar macOS
 
 <!-- Used Tools -->
 ## Build With:
