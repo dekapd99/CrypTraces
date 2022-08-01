@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Deklarasi Data (Domain Model): Tipe-tipe Coin Crypto (Hard Code) Bisa juga dilakukan secara Query
+// Deklarasi Data (Domain Model): Coin Crypto (Hard Code)
 enum CoinType: String, Identifiable, CaseIterable {
     
     case bitcoin

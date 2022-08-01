@@ -81,7 +81,7 @@
 				AB090242288535CD00FB554A /* APIService */,
 				ABA8017A2881C46600506BD7 /* Model */,
 				ABA801792881C46100506BD7 /* View */,
-				ABA801782881C45A00506BD7 /* ModelView */,
+				ABA801782881C45A00506BD7 /* ViewModel */,
 				AB9D448C2881A14E0072C201 /* Assets.xcassets */,
 				AB9D44912881A14E0072C201 /* CrypTraces.entitlements */,
 				AB9D448E2881A14E0072C201 /* Preview Content */,
@@ -97,13 +97,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		ABA801782881C45A00506BD7 /* ModelView */ = {
+		ABA801782881C45A00506BD7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				AB09024028852C4400FB554A /* MenuBarCoinViewModel.swift */,
 				AB0902432885383600FB554A /* PopoverCoinViewModel.swift */,
 			);
-			path = ModelView;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ABA801792881C46100506BD7 /* View */ = {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Main App dengan Base Empty View di MacOS App
 @main
 struct CrypTracesApp: App {
     

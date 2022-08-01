@@ -5,19 +5,27 @@
 //  Created by Deka Primatio on 18/07/22.
 //
 
+/**
+ * Combine: Declarative Framework Swift API untuk Processing Value secara terus menerus dengan konsep Async
+ * Cara kerjanya menggunakan operator publishers & subscribers
+ * Publishers: mengekspos value yang berubah secara terus menerus
+ * Subscribers: menerima value dari publishers
+ * Disini Combine digunakan untuk Combine Wrap Multiple Publishers menjadi 1 Pipeline Subscribers
+ */
 import Combine
 import Foundation
 import SwiftUI
 
+// Berisikan Fungsi Update Data Value Coin (Prices) di Popover dengan Combine Subscriber
 class PopoverCoinViewModel: ObservableObject {
     @Published private(set) var title: String // Coin Name
     @Published private(set) var subtitle: String // Coin Price Value
-    @Published private(set) var coinTypes: [CoinType] // Circle Color Connection Indicator
-    // Reflects a value from users default & invalidates of view on a change of price value dengan key SelectedCoinType
+    @Published private(set) var coinTypes: [CoinType] // Circle Color: Connection Indicator
+    // Untuk mengganti Default Coin & Value secara Realtime Value Changes via selectedCoinType
     @AppStorage("SelectedCoinType") var selectedCoinType = CoinType.bitcoin
     
     private let service: CoinCapPriceService // CoinCapService
-    // when we subscribe to publishers, it will return a subscription that we need to store & handle cancellation of removal of that subscription
+    // Var Subscriptions Store & Cancellation Handler
     private var subscriptions = Set<AnyCancellable>()
     
     // Format Penulisan Angka Currency dalam bentuk USD $
@@ -29,31 +37,31 @@ class PopoverCoinViewModel: ObservableObject {
         return formatter
     }()
     
-    // initializer
+    // Initializer CoinCapPriceService
     init(title: String = "", subtitle: String = "", coinTypes: [CoinType] = CoinType.allCases, service: CoinCapPriceService = .init()) {
-        // assign associated instance property
+        // Assign associated instance property
         self.title = title
         self.subtitle = subtitle
         self.coinTypes = coinTypes
         self.service = service
     }
     
-    // Fungsi Subscriber Repository
+    // Fungsi Subscriber Repository: Combine Wrap Multiple Publishers menjadi 1 Pipeline Subscribers
     func subscribeToService() {
-        // cek the service
         service.coinDictionarySubject
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in self?.updateView() }
-            .store(in: &subscriptions)
+            .receive(on: DispatchQueue.main) // Always invoke this Code inside the Main thread
+            .sink { [weak self] _ in self?.updateView() } // Attaches a Subscribers with Closure based Behavior that will never fail to updateView
+            .store(in: &subscriptions) // Store in Subscription
     }
     
     // Fungsi Update Tampilan (Coin Price Value)
     func updateView() {
-        let coin = self.service.coinDictionary[selectedCoinType.rawValue] // grab the name of coinType that we will to be show
-        self.title = coin?.name ?? selectedCoinType.description // name publish property with fallback of selected coin description
+        // Tampilkan Raw Value dari CoinType yang sudah di Deklarasikan
+        let coin = self.service.coinDictionary[selectedCoinType.rawValue]
+        self.title = coin?.name ?? selectedCoinType.description // Tampilkan Nama Coin yang dipilih
         
-        // cek coin dan format value coin dengan fungsi formatter diatas
-        // jika tidak tampilkan Updating...
+        // Cek Coin dan Format Value Coin dengan fungsi Formatter diatas
+        // Jika tidak tampilkan Updating...
         if let coin = coin, let value = self.currencyFormatter.string(from: NSNumber(value: coin.value)) {
             self.subtitle = value
         } else {
@@ -62,8 +70,8 @@ class PopoverCoinViewModel: ObservableObject {
     }
     
     func valueText(for coinType: CoinType) -> String {
-        // cek coin dan format value coin dengan fungsi formatter diatas
-        // jika tidak tampilkan Updating...
+        // Cek Coin dan Format Value Coin dengan fungsi Formatter diatas di List Coin
+        // Jika tidak tampilkan Updating...
         if let coin = service.coinDictionary[coinType.rawValue], let value = self.currencyFormatter.string(from: NSNumber(value: coin.value)) {
             return value
         } else {

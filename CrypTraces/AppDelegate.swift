@@ -5,13 +5,14 @@
 //  Created by Deka Primatio on 15/07/22.
 //
 
-import Cocoa
+import Cocoa // Framework untuk MacOS App Launch Handler dengan Target Minimum OS X
 import SwiftUI
 
+// Berisikan Fungsi App Launch Handler
 class AppDelegate: NSObject, NSApplicationDelegate {
-    // implicitly inject MenuBarCoinViewModel
+    // Implicitly inject MenuBarCoinViewModel
     var menuBarCoinViewModel: MenuBarCoinViewModel!
-    // implicitly inject MenuBarCoinViewModel
+    // Implicitly inject MenuBarCoinViewModel
     var popoverCoinViewModel: PopoverCoinViewModel!
     // CoinCapService dari Model
     var coinCapService = CoinCapPriceService()
@@ -30,15 +31,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return view
     }()
     
+    // Fungsi Apps Launching
     func applicationDidFinishLaunching(_ notification: Notification) {
-        setupCoinCapService() // Aktifkan CoinCap Service di Main Thread
+        setupCoinCapService() // Mengaktifkan CoinCap Service di Main Thread
         setupMenuBar() // Tampilkan Menu Bar di Status Bar Mac
         setupPopover() // Tampilkan Pop Up setelah di klik
     }
     
+    // Fungsi Setup CoinCap Service
     func setupCoinCapService() {
-        coinCapService.connect() // konekin dengan coincap.io service
-        coinCapService.startMonitorNetworkConnectivity() // start monitoring connectivity
+        coinCapService.connect() // Koneksikan dengan CoinCap Service
+        coinCapService.startMonitorNetworkConnectivity() // Start Monitoring Connectivity
     }
     
 }
