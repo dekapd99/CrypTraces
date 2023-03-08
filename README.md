@@ -4,7 +4,7 @@
 </p>
 
 # CrypTraces
-Aplikasi CrypTraces adalah MacOS Widget Crypto Tracker dengan SwiftUI, Combine & Cocoa Framework, dan WebSocket & CoinCap API. Aplikasi ini berbentuk Widget di Menu Bar MacOS dengan menampilkan beberapa Crypto Currency seperti Bitcoin (BTC), Ethereum (ETH), Dogecoin (DOGE), Monero (XMR), dan Litecoin (LTC).
+Aplikasi CrypTraces adalah MacOS Widget Crypto Tracker dengan SwiftUI, Combine & Cocoa-Pods Framework, dan WebSocket & CoinCap API. Aplikasi ini berbentuk Widget di Menu Bar MacOS dengan menampilkan beberapa Crypto Currency seperti Bitcoin (BTC), Ethereum (ETH), Dogecoin (DOGE), Monero (XMR), dan Litecoin (LTC).
 
 ### Preview
 <p align="center">
